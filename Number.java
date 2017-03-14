@@ -57,15 +57,15 @@ public class Number {
 	}
 	
 	/*This is a helper function for convertToHex*/
-	public char getHexValue(char a, char b, char c, char d){
+	public char getHexValue(char digit1, char digit2, char digit3, char digit4){ //4 digits in hex number from left to right
 		int sum = 0;
-		if (a == '1')
+		if (digit1 == '1')
 			sum +=8; 
-		if (b == '1')
+		if (digit2 == '1')
 			sum +=4;
-		if (c == '1')
+		if (digit3 == '1')
 			sum +=2; 
-		if (d == '1')
+		if (digit4 == '1')
 			sum +=1;
 		char hexValue = hexDigits[sum];
 		return hexValue;
@@ -75,12 +75,12 @@ public class Number {
 	public String convertToHex(int decimal){
 		String binary = convertToBinary(decimal);
 		char[] bC = binary.toCharArray(); //binary character array
-		char[] d  = new char[8];
+		char[] hexQuads = new char[8]; //the hex value of every 4 numbers
 		for (int i=0; i<d.length; i++){
-			d[i]=getHexValue(bC[4*i],bC[4*i+1],bC[4*i+2],bC[4*i+3]);
+			hexQuads[i]=getHexValue(bC[4*i],bC[4*i+1],bC[4*i+2],bC[4*i+3]);
 		}
-		String text = String.copyValueOf(d);
-		return text;
+		String hex = String.copyValueOf(hexQuads);
+		return hex;
 	}
 	
 	
