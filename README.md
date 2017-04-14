@@ -5,3 +5,6 @@ little exercises and homework
 **Number.java**
 Converts a signed decimal number to binary and decimal.
 Converts an unsigned hex number to postiive base 10. 
+
+**Fibonacci.s***
+Calculates Fibonacci value at certain index. 
